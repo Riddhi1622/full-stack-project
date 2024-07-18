@@ -1,0 +1,31 @@
+name: Build and Test Dapp
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # Install dependencies (replace with your specific steps)
+      - name: Install Node.js and npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: Install dependencies
+        run: npm install
+
+      # Build your dapp (replace with your specific command)
+      - name: Build Dapp
+        run: npm run build
+
+      # Run tests (replace with your specific command)
+      - name: Run Tests
+        run: npm test
+
+      # Optional: Upload test reports (requires additional configuration)
+
