@@ -11,21 +11,22 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Install dependencies (replace with your specific steps)
+      # Install dependencies
       - name: Install Node.js and npm
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
-      - name: Install dependencies
-        run: npm install
+          node-version: '16'  # Adjust if needed for your project
 
-      # Build your dapp (replace with your specific command)
-      - name: Build Dapp
-        run: npm run build
+      - name: Install dependencies (from package.json)
+        run: npm ci  # Use npm ci for production-like installs with lockfiles
 
-      # Run tests (replace with your specific command)
-      - name: Run Tests
-        run: npm test
+      # Build your dapp
+      - name: Build Dapp (replace with your specific command)
+        run: npm run build  # Replace with the actual command you use for building
+
+      # Run tests
+      - name: Run Tests (replace with your specific command)
+        run: npm test  # Replace with the actual command you use for testing
 
       # Optional: Upload test reports (requires additional configuration)
 
